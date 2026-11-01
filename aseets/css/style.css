@@ -1,0 +1,537 @@
+
+/* =================================
+   1. BOOTSTRAP IMPORT
+================================= */
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+
+
+/* =================================
+   2. ROOT VARIABLES
+================================= */
+
+:root {
+    --accent: #4f7cff;
+    --bg: #f7f9ff;
+    --surface: #ffffff;
+    --text: #172033;
+    --muted: #69758b;
+    --border: #e5eaf4;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Dark Mode */
+
+:root[data-theme="dark"] {
+    --bg: #101522;
+    --surface: #192235;
+    --text: #ffffff;
+    --muted: #aab5ca;
+    --border: #2a3851;
+    --shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Color Themes */
+
+:root[data-color="blue"] {
+    --accent: #4f7cff;
+}
+
+:root[data-color="purple"] {
+    --accent: #9466e8;
+}
+
+:root[data-color="green"] {
+    --accent: #159b79;
+}
+
+:root[data-color="orange"] {
+    --accent: #e88a36;
+}
+
+
+/* =================================
+   3. BASIC STYLE
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.section {
+    padding: 90px 7%;
+}
+
+.narrow {
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* =================================
+   4. NAVBAR
+================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.navbar.scrolled {
+    box-shadow: var(--shadow);
+}
+
+.brand {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn,
+.nav-actions select {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+}
+
+
+/* =================================
+   5. HERO SECTION
+================================= */
+
+.hero {
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 65px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h2 {
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 600px;
+}
+
+.cursor {
+    color: var(--accent);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   6. HERO DESIGN
+================================= */
+
+.hero-art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+}
+
+.monogram {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent), #a9c2ff);
+    color: white;
+    font-size: 100px;
+    font-weight: 900;
+    border-radius: 40px;
+    transform: rotate(-7deg);
+    box-shadow: var(--shadow);
+    transition: 0.4s;
+}
+
+.monogram:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+
+/* =================================
+   7. CTA BUTTONS
+================================= */
+
+.button-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn.secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+
+/* =================================
+   8. SECTION TITLES
+================================= */
+
+.section-title {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+/* =================================
+   9. CARDS
+================================= */
+
+.cards {
+    display: grid;
+    gap: 25px;
+}
+
+.cards.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    background: var(--surface);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+
+/* =================================
+   10. FAQ SECTION
+================================= */
+
+.faq-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 18px 18px;
+    color: var(--muted);
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-question span {
+    transition: 0.3s;
+}
+
+.faq-item.open .faq-question span {
+    transform: rotate(45deg);
+}
+
+
+/* =================================
+   11. SIDEBAR
+================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 270px;
+    height: 100vh;
+    background: var(--surface);
+    padding: 30px;
+    z-index: 2000;
+    box-shadow: var(--shadow);
+    transition: 0.4s;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 13px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+}
+
+.sidebar a:hover {
+    color: var(--accent);
+}
+
+.close-sidebar {
+    float: right;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+    display: none;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+
+/* =================================
+   12. FOOTER
+================================= */
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
+
+
+/* =================================
+   13. SCROLL TO TOP
+================================= */
+
+.scroll-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =================================
+   14. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 12px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 3;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero .lead {
+        margin: auto;
+    }
+
+    .button-row {
+        justify-content: center;
+    }
+
+    .cards.three {
+        grid-template-columns: 1fr;
+    }
+
+    .monogram {
+        width: 190px;
+        height: 190px;
+        font-size: 75px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}

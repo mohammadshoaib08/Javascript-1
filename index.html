@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Shoaib | Home</title>
+    <link rel="stylesheet" href="./aseets/css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+    <a class="brand" href="index.html">MS<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"></button>
+
+    <nav class="nav-links" id="navLinks">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle">☾</button>
+        <select id="colorTheme">
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="green">Green</option>
+            <option value="orange">Orange</option>
+        </select>
+    </div>
+</header>
+
+<aside class="sidebar" id="sidebar">
+    <button class="close-sidebar" id="closeSidebar">×</button>
+    <h2>MS.</h2>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#faq">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+</aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<main>
+
+<section class="hero section" id="home">
+    <div class="hero-copy">
+        <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+        <h1>I'm <span class="accent">Mohammad Shoaib</span></h1>
+
+        <h2>
+            I am a <span id="typingText"></span>
+        </h2>
+
+        <p class="lead">
+            A curious learner exploring web development,
+            creative ideas, and technology.
+        </p>
+
+        <div class="button-row">
+            <a href="projects.html" class="btn primary">
+                Explore Projects
+            </a>
+
+            <a href="cv.txt" download class="btn secondary">
+                Download CV
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-art">
+        <div class="monogram">MS</div>
+    </div>
+</section>
+
+<section class="section narrow" id="skills">
+    <h2 class="section-title">My Interests</h2>
+
+    <div class="cards three">
+        <article class="card">
+            <h3>Web Development</h3>
+            <p>Learning website development.</p>
+        </article>
+
+        <article class="card">
+            <h3>Creative Thinking</h3>
+            <p>Exploring creative ideas.</p>
+        </article>
+
+        <article class="card">
+            <h3>Learning</h3>
+            <p>Improving my knowledge.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section narrow" id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Who am I? <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>I am Mohammad Shoaib.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                What do I learn? <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>I am learning web development.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Which technologies do I use? <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>HTML, CSS and JavaScript.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    © <span id="year"></span> Mohammad Shoaib
+</footer>
+
+<button id="scrollTop" class="scroll-top">↑</button>
+
+<script src="./aseets/js/app.js"></script>
+
+</body>
+</html>
